@@ -1,0 +1,21 @@
+{
+  "name": "foodcard",
+  "version": "1.0.0",
+  "description": "FoodCard is a **MERN-based** web application that lets users create and manage a list of their favorite foods along with their prices. Users can **add, edit, and delete** items in their food list easily.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
