@@ -2,18 +2,19 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 
+import foodRoutes from "./routes/food.route.js";
+
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.post("/foods", async (req, res) => {});
-const food = req.body;
+app.use(express.json());
 
-if (!food.name || !food.calories || !food.price || !food.image) {
-  res.status(400).json({ success: false, message: "All fields are required" });
-}
+app.use("/api/foods", foodRoutes);
 
-app.listen(3000, () => {
+
+app.listen(PORT, () => {
   connectDB();
-  console.log("Server is running on http://localhost:3000");
+  console.log("Server is running on http://localhost:"+ PORT);
 });
